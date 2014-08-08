@@ -1,4 +1,4 @@
-var KEY = "apiキー"
+var KEY = "AIzaSyCno4k88U4aCOoNjcNQ9bpaF9_f5RwHkrs"
  
 function getJSON(url,callback) {
     var request = new XMLHttpRequest();
@@ -30,15 +30,37 @@ function getMovies(data) {
         var videos = data.items;
         console.log(videos);
         var output = "";
-        
-        for (var i=0 ; i<videos.length ; i++) {
-            var date = videos[i].snippet.publishedAt;
-            idx = date.indexOf("2014");
-            if (idx>=0) {
-            output += '<iframe width="560" height="315" src="http://www.youtube.com/embed/'+videos[i].id.videoId+'" frameborder="0" allowfullscreen></iframe>'
-        };
-        };
-        document.getElementById("douga2014").innerHTML = output;
+        var output2013 = "";
+        var output2012 = "";
+	        for (var i=0 ; i<videos.length ; i++) {
+	            var date = videos[i].snippet.publishedAt;
+	            
+	            idx = date.indexOf("2014");
+	            if (idx>=0) {
+	            output += '<iframe width="560" height="315" src="http://www.youtube.com/embed/'+videos[i].id.videoId+'" frameborder="0" allowfullscreen></iframe>'
+	        };
+	       
+	        document.getElementById("douga2014").innerHTML = output;
+	     };
+
+	        for (var i=0 ; i<videos.length ; i++) {
+	            var date = videos[i].snippet.publishedAt;
+	            idx = date.indexOf("2013");
+	            if (idx>=0) {
+	            output2013 += '<iframe width="560" height="315" src="http://www.youtube.com/embed/'+videos[i].id.videoId+'" frameborder="0" allowfullscreen></iframe>'
+	        };
+	       
+	        document.getElementById("douga2013").innerHTML = output2013;
+	     };
+	for (var i=0 ; i<videos.length ; i++) {
+		            var date = videos[i].snippet.publishedAt;
+		            idx = date.indexOf("2012");
+		            if (idx>=0) {
+		            output2012 += '<iframe width="560" height="315" src="http://www.youtube.com/embed/'+videos[i].id.videoId+'" frameborder="0" allowfullscreen></iframe>'
+		        };
+		       
+		        document.getElementById("douga2012").innerHTML = output2012;
+		     };
     });
 }
 
