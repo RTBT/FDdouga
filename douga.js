@@ -1,4 +1,4 @@
-var KEY = "AIzaSyCno4k88U4aCOoNjcNQ9bpaF9_f5RwHkrs"
+var KEY = "apiキー"
  
 function getJSON(url,callback) {
     var request = new XMLHttpRequest();
