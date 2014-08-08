@@ -17,29 +17,37 @@ function getJSON(url,callback) {
     request.onerror = function() {
       console.log("error!");
     };
- 
+    
     request.send();
-    console.log(data)
+   
 }
- 
- 
+
+
 
 function getMovies(data) {
     var id = data.items[0].id;
-    getJSON("https://www.googleapis.com/youtube/v3/search?part=id&type=video&channelId="+id+"&key="+KEY,function(data){
-        videos = data.items;
+    getJSON("https://www.googleapis.com/youtube/v3/search?order=date&maxResults=30&part=snippet&type=video&channelId="+id+"&key="+KEY,function(data){        
+        var videos = data.items;
+        console.log(videos);
         var output = "";
+        
         for (var i=0 ; i<videos.length ; i++) {
+            var date = videos[i].snippet.publishedAt;
+            idx = date.indexOf("2014");
+            if (idx>=0) {
             output += '<iframe width="560" height="315" src="http://www.youtube.com/embed/'+videos[i].id.videoId+'" frameborder="0" allowfullscreen></iframe>'
         };
-        document.getElementById("movies").innerHTML = output;
+        };
+        document.getElementById("douga2014").innerHTML = output;
     });
 }
- 
+
 
 document.addEventListener('DOMContentLoaded', function(){
     getJSON("https://www.googleapis.com/youtube/v3/channels?part=id&forUsername=FREEDIVISIONweb&key="+KEY,getMovies);
  
+
+
 window.onload = function () {
 	var select =document.getElementById("year");
 	select.addEventListener("change", function(event){;
@@ -59,11 +67,3 @@ window.onload = function () {
 };
 })
 
-function hoge(arg) {
-    console.log("argument:"+arg);
-    return "hoge!!!!";
-}
- 
-function piyo() {
-    return 2;
-}
