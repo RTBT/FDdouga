@@ -1,4 +1,4 @@
-var KEY = "apiキー"
+var KEY = ""
  
 function getJSON(url,callback) {
     var request = new XMLHttpRequest();
@@ -37,7 +37,8 @@ function getMovies(data) {
 	            
 	            idx = date.indexOf("2014");
 	            if (idx>=0) {
-	            output += '<iframe width="560" height="315" src="http://www.youtube.com/embed/'+videos[i].id.videoId+'" frameborder="0" allowfullscreen></iframe>'
+	            output += '<iframe width="560" height="315" marginheight="20" src="http://www.youtube.com/embed/'+videos[i].id.videoId+'" frameborder="0" allowfullscreen></iframe>'
+	        
 	        };
 	       
 	        document.getElementById("douga2014").innerHTML = output;
@@ -47,7 +48,7 @@ function getMovies(data) {
 	            var date = videos[i].snippet.publishedAt;
 	            idx = date.indexOf("2013");
 	            if (idx>=0) {
-	            output2013 += '<iframe width="560" height="315" src="http://www.youtube.com/embed/'+videos[i].id.videoId+'" frameborder="0" allowfullscreen></iframe>'
+	            output2013 += '<iframe width="560" height="315" marginheight="20" src="http://www.youtube.com/embed/'+videos[i].id.videoId+'" frameborder="0" allowfullscreen></iframe>'
 	        };
 	       
 	        document.getElementById("douga2013").innerHTML = output2013;
@@ -56,7 +57,7 @@ function getMovies(data) {
 		            var date = videos[i].snippet.publishedAt;
 		            idx = date.indexOf("2012");
 		            if (idx>=0) {
-		            output2012 += '<iframe width="560" height="315" src="http://www.youtube.com/embed/'+videos[i].id.videoId+'" frameborder="0" allowfullscreen></iframe>'
+		            output2012 += '<iframe width="560" height="315" marginheight="20" src="http://www.youtube.com/embed/'+videos[i].id.videoId+'" frameborder="0" allowfullscreen></iframe>'
 		        };
 		       
 		        document.getElementById("douga2012").innerHTML = output2012;
@@ -82,8 +83,11 @@ window.onload = function () {
 		if (year=="ichiran") {
 			year = "2014";
 		};
+		console.log(year)
 		var test = document.getElementById("douga"+year);
 		test.classList.add("is-actived");
+		var date = document.getElementById("date"+year);
+		date.classList.add("is-actived");
 
 	});
 };

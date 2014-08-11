@@ -2,8 +2,35 @@
 
 .screen {
 	display: none;
+	
 }
 
 .is-actived {
 	display:  block;
+}
+
+
+select{
+	float: left;
+}
+#header{
+	height: 90px;  
+  	margin: 0;  
+  	padding: 0;
+}
+#ex{
+	font-size: 11px;
+	background: #F39800;
+	color: #FFFFFF;
+	padding-left: 10px;
+}
+
+#main{
+	margin-left: 80px;
+	
+}
+
+#date2014, #date2013, #date2012{
+	height: 20px;
+	
 }

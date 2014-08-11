@@ -4,29 +4,53 @@
 	<meta charset="utf-8">
 	<title>FD動画</title>
 	<link rel="stylesheet" type="text/css" href="douga.css" media="all">
+	<script type="text/javascript" src="cocktail.js">
+</script>
 </head>
 <body>
-<h1 class="title">FD動画</h1>
-<h2 class="ex">説明がここに入るよ</h2>
-<script src="douga.js" type="text/javascript" charset="utf-8" ></script>
- <select id="year"　>
-      <option value="ichiran" selected>公開年</option>
-      <option value="2014" >2014年</option>
-      <option value="2013">2013年</option>
-      <option value="2012">2012年</option>
-   </select>
-<div id="default" class="screen is-actived">
-	動画一覧
-</div>
-<div id="douga2014" class="screen" >
-	2014年動画一覧
-</div>
-<div id="douga2013" class="screen">
-	2013年動画一覧	
-</div>
-<div id="douga2012" class="screen">
-	2012年動画一覧	
-</div>
+	<div id="header">
+		<div id="title">
+		<a href="http://rtbt.html.xdomain.jp/FDdouga.html">
+		<img src="title.png">
+		</a>
+		</div>
+		<div id="ex">
+		FREE☆DIVISIONが過去にアップロードした動画を年代別に表示するサイト
+		</div>
+	</div>
 
+	<script src="douga.js" type="text/javascript" charset="utf-8" ></script>
+	 <select id="year"　>
+	      <option value="ichiran" selected>公開年</option>
+	      <option value="2014" >2014年</option>
+	      <option value="2013">2013年</option>
+	      <option value="2012">2012年</option>
+	   </select>
+
+	   <div id="main">
+		<div id="date2014" class="screen" >
+		<img src="year2014.png">
+		</div>
+		<div id="date2013" class="screen" >
+		<img src="year2013.png">
+		</div>
+		<div id="date2012" class="screen" >
+		<img src="year2012.png">
+		</div>
+
+		<div id="douga2014" class="screen" >
+		2014年動画一覧
+		</div>
+		<br>
+		<div id="douga2013" class="screen">
+		2013年動画一覧	
+		<br>
+		</div>
+		<div id="douga2012" class="screen">
+			2012年動画一覧
+		<br>	
+		</div>
+
+	</div>
 </body>
 </html>
